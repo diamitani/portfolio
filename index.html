@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patrick Diamitani — GTM Engineer & AI Automation Builder</title>
+<meta name="description" content="Patrick Diamitani builds production revenue automations: inbound engines, prospect engines, enrichment pipelines, and AI agents for GTM teams. Case studies, portfolio, and resources.">
+<style>
+  :root{
+    --navy:#0A1430; --navy2:#0E1D4A; --blue:#2E6BFF; --sky:#6EA8FF;
+    --ink:#ffffff; --muted:#9DB2D6; --card:rgba(255,255,255,.045);
+    --line:rgba(110,168,255,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--navy);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--blue);color:#fff}
+  a{color:var(--sky);text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,20,48,.92);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.02em;color:#fff}
+  .mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--sky));
+    display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:15px}
+  .brand small{display:block;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.14em}
+  nav ul{display:flex;gap:20px;list-style:none;font-size:14px;font-weight:600}
+  nav ul a{color:var(--muted)} nav ul a:hover{color:var(--sky)}
+  @media(max-width:820px){nav ul{display:none}}
+  .hero{padding:96px 0 72px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:-20%;
+    background:radial-gradient(600px 400px at 20% 10%,rgba(46,107,255,.35),transparent 60%),
+               radial-gradient(700px 500px at 85% 90%,rgba(110,168,255,.14),transparent 60%)}
+  .hero .wrap{position:relative}
+  .kicker{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.22em;color:var(--sky);
+    border:1px solid var(--line);border-radius:999px;padding:8px 16px;margin-bottom:28px;background:rgba(110,168,255,.07)}
+  h1{font-size:clamp(38px,6vw,64px);line-height:1.08;letter-spacing:-.02em;font-weight:800;margin-bottom:20px}
+  h1 .hl{color:var(--sky)}
+  .lede{font-size:19px;color:var(--muted);max-width:720px;margin-bottom:36px}
+  .lede strong{color:#fff}
+  .cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;
+    padding:14px 26px;border-radius:12px;transition:transform .15s ease}
+  .btn.primary{background:linear-gradient(135deg,var(--blue),#5B8CFF);color:#fff}
+  .btn.primary:hover{transform:translateY(-2px)}
+  .btn.ghost{border:1px solid var(--line);color:var(--sky)}
+  .btn.ghost:hover{background:rgba(110,168,255,.08)}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .stat b{display:block;font-size:26px;color:var(--sky);font-weight:800;letter-spacing:-.01em}
+  .stat span{font-size:13px;color:var(--muted)}
+  section{padding:72px 0}
+  .sec-kicker{font-size:12px;font-weight:800;letter-spacing:.22em;color:var(--sky);margin-bottom:12px}
+  h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;margin-bottom:14px;font-weight:800}
+  .sec-sub{color:var(--muted);font-size:17px;max-width:760px;margin-bottom:40px}
+  .timeline{position:relative;margin-top:8px}
+  .t-item{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line)}
+  .t-item:last-child{border-bottom:1px solid var(--line)}
+  .t-when{font-weight:800;color:var(--sky);font-size:14px;letter-spacing:.04em}
+  .t-what b{font-size:17px} .t-what .role{color:var(--sky);font-weight:600;font-size:15px}
+  .t-what p{color:var(--muted);font-size:15px;margin-top:6px;max-width:680px}
+  @media(max-width:640px){.t-item{grid-template-columns:1fr;gap:6px}}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;
+    transition:transform .18s ease,border-color .18s ease}
+  .card:hover{transform:translateY(-4px);border-color:rgba(110,168,255,.4)}
+  .card .num{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--sky);margin-bottom:10px}
+  .card h3{font-size:20px;margin-bottom:10px;letter-spacing:-.01em}
+  .card p{color:var(--muted);font-size:15px;margin-bottom:14px}
+  .metric{display:inline-block;background:rgba(110,168,255,.1);border:1px solid var(--line);
+    color:var(--sky);font-weight:700;font-size:14px;border-radius:10px;padding:8px 14px;margin-bottom:6px}
+  .case .client{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--muted);margin-bottom:8px}
+  .proj h3 a{color:#fff} .proj h3 a:hover{color:var(--sky)}
+  .proj .tag{display:inline-block;font-size:12px;font-weight:700;color:var(--sky);
+    border:1px solid var(--line);border-radius:999px;padding:4px 12px;margin:0 6px 14px 0}
+  .strip{margin-top:22px;background:linear-gradient(135deg,rgba(46,107,255,.2),rgba(110,168,255,.08));
+    border:1px solid var(--line);border-radius:18px;padding:28px}
+  .strip h3{margin-bottom:10px;font-size:19px}
+  .strip p{color:var(--muted);font-size:15px;max-width:820px}
+  .strip p+p{margin-top:10px}
+  .res{display:flex;gap:20px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
+    border-radius:18px;padding:26px;margin-bottom:16px}
+  .res .ric{width:52px;height:52px;flex:none;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--sky));
+    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;color:#fff}
+  .res h3{margin-bottom:8px;font-size:19px}
+  .res h3 a{color:#fff} .res h3 a:hover{color:var(--sky)}
+  .res p{color:var(--muted);font-size:15px}
+  .contact{background:linear-gradient(135deg,var(--navy2),var(--navy));border-top:1px solid var(--line)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+  @media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
+  .contact a.big{font-size:20px;font-weight:700;display:block;margin-bottom:6px}
+  .fine{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);
+    font-size:13px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer{padding:28px 0 40px;font-size:13px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand"><div class="mark">PD</div><div>Patrick Diamitani<small>GTM ENGINEER</small></div></div>
+    <ul>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#systems">Systems</a></li>
+      <li><a href="#cases">Case Studies</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">GTM ENGINEER &middot; AI AUTOMATION BUILDER</span>
+    <h1>I'm Patrick Diamitani.<br>I build the <span class="hl">machines that do the selling.</span></h1>
+    <p class="lede">Production revenue automations for GTM teams: <strong>inbound engines, prospect engines, enrichment pipelines, and AI agents</strong> that live in the CRM and survive contact with real pipeline. This page is the proof: the systems, the case studies, and the work.</p>
+    <div class="cta">
+      <a class="btn primary" href="#cases">View case studies</a>
+      <a class="btn ghost" href="Patrick-Diamitani-Founding-GTM-Engineer-Resume-2026-10-02.pdf" download>Download resume</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>$6.38M</b><span>pipeline attributed to my inbound automation</span></div>
+      <div class="stat"><b>101 &rarr; 29</b><span>MQLs qualified into 29 deals</span></div>
+      <div class="stat"><b>&minus;70%</b><span>enrichment spend cut across 10,000+ accounts</span></div>
+      <div class="stat"><b>8 hrs &rarr; 30 min</b><span>prospecting time per 50 accounts</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="story">
+  <div class="wrap">
+    <div class="sec-kicker">01 &middot; STORY</div>
+    <h2>From carrying a quota to building the machine</h2>
+    <p class="sec-sub">I didn't start in RevOps. I started in the trenches, carrying a quota, and I know what reps actually do all day because I did it. Then I started building the systems that do it better.</p>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-when">2025 &ndash; PRESENT</div>
+        <div class="t-what"><b>Atlas HXM</b> <span class="role">&middot; GTM AI &amp; Automation Manager</span>
+          <p>Production-grade enterprise automations across sales, marketing, finance, legal, and operations for a 59+ person org. Replaced the SDR research and sequencing flow for the entire sales team. Tied inbound automation to $6.38M in attributed pipeline. Ran an internal Claude Academy for the 50+ person GTM org.</p></div>
+      </div>
+      <div class="t-item">
+        <div class="t-when">2023 &ndash; PRESENT</div>
+        <div class="t-what"><b>Founder</b> <span class="role">&middot; GTM automation builds for marketing, sales &amp; ops teams</span>
+          <p>Enterprise-grade production automations, agents, and skills. Client work includes outbound operations for 60,000 leads (client grew $1M &rarr; $3M ARR), a $5M-pipeline outbound playbook for six reps, and embedded CRM and lead-gen workflows for a startup founding team.</p></div>
+      </div>
+      <div class="t-item">
+        <div class="t-when">2022 &ndash; 2023</div>
+        <div class="t-what"><b>Uber for Business</b> <span class="role">&middot; Enterprise BDR</span>
+          <p>$947K+ in gross bookings through enterprise prospecting. Averaged 2,000+ emails and 250 dials per week to senior buyers.</p></div>
+      </div>
+      <div class="t-item">
+        <div class="t-when">2019 &ndash; 2021</div>
+        <div class="t-what"><b>Upwork</b> <span class="role">&middot; Senior Enterprise BDR</span>
+          <p>Ranked in the top 10% of a 60+ person team on quota; developed enterprise talent-use cases with buyers.</p></div>
+      </div>
+      <div class="t-item">
+        <div class="t-when">2018</div>
+        <div class="t-what"><b>Techstars Chicago</b> <span class="role">&middot; Portfolio Associate</span>
+          <p>Operator-side view of how startups actually grow, and where GTM breaks.</p></div>
+      </div>
+      <div class="t-item">
+        <div class="t-when">2016 &ndash; 2018</div>
+        <div class="t-what"><b>DreamItReel</b> <span class="role">&middot; Business Development Lead</span>
+          <p>Developed a sales process tied to $2M+ revenue and 40% YoY growth.</p></div>
+      </div>
+    </div>
+    <p class="sec-sub" style="margin-top:28px;margin-bottom:0">B.S. Economics, St. John&rsquo;s University &middot; AWS Certified AI Practitioner &middot; Stack: HubSpot, Salesforce, Clay, n8n, Python, Azure OpenAI, LangChain</p>
+  </div>
+</section>
+
+<section id="systems" style="background:rgba(255,255,255,.015)">
+  <div class="wrap">
+    <div class="sec-kicker">02 &middot; CORE SYSTEMS</div>
+    <h2>Six production systems, running today</h2>
+    <p class="sec-sub">Not demos. These are the revenue workflows I design, build, and keep alive in production CRMs.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="num">SYSTEM 01</div>
+        <h3>Inbound Engine</h3>
+        <p>Webhook listener catches every inquiry &rarr; enrichment &rarr; LLM ICP scoring &rarr; sub-30-second round-robin calendar booking. Recovered 364 historical chatbot contacts into attribution with a zero-error API backfill.</p>
+        <div class="metric">101 MQLs &middot; 29 deals &middot; $6.38M pipeline</div>
+      </div>
+      <div class="card">
+        <div class="num">SYSTEM 02</div>
+        <h3>Prospect Engine</h3>
+        <p>Intent waterfall: hiring and tech-stack signals &rarr; CRM dedupe shield &rarr; multi-provider enrichment &rarr; personalized sequences. 8-signal library with a 0&ndash;100 account scoring model; 5,398-contact master run in weekly CRM-safe batches.</p>
+        <div class="metric">8 hrs / 50 accounts &rarr; under 30 min &middot; opens 17% &rarr; 55%</div>
+      </div>
+      <div class="card">
+        <div class="num">SYSTEM 03</div>
+        <h3>Pre-Sales Dossiers</h3>
+        <p>Ten minutes before every discovery call, the rep gets a one-pager in Slack: prospect bio, recent news, tech stack, tailored questions. Triggered off the meeting-booked webhook and enriched with intent data.</p>
+        <div class="metric">Requested by VP Growth &middot; fully automated</div>
+      </div>
+      <div class="card">
+        <div class="num">SYSTEM 04</div>
+        <h3>Post-Sales Intelligence</h3>
+        <p>Transcript webhooks &rarr; AI extraction of BANT criteria, competitors, and next steps &rarr; CRM deal-stage updates &rarr; follow-up drafts. Repaired a pipeline failing on 21 of 25 runs; cut per-call context bloat 882KB &rarr; 295KB.</p>
+        <div class="metric">EOR Compliance Checker: 46 nodes, 242 deals screened, 103 corrected</div>
+      </div>
+      <div class="card">
+        <div class="num">SYSTEM 05</div>
+        <h3>Daily Execution Digest</h3>
+        <p>7:30 AM, every day: overdue deal stages, uncontacted demo requests, ghosting alerts. The hygiene report that keeps a pipeline honest, with zero rep effort.</p>
+        <div class="metric">Daily &middot; automated &middot; zero rep effort</div>
+      </div>
+      <div class="card">
+        <div class="num">SYSTEM 06</div>
+        <h3>Executive GTM Telemetry</h3>
+        <p>6:00 PM briefing: new pipeline generated, stage conversion, velocity. The daily picture of the revenue engine, in one place, for the people who own the number.</p>
+        <div class="metric">Twice-daily loop &middot; live dashboard</div>
+      </div>
+    </div>
+    <div class="strip">
+      <h3>The governance layer underneath all six</h3>
+      <p><b style="color:#fff">Enrichment with spend controls.</b> Clay + Python + Amplemarket + ZoomInfo + HubSpot waterfall with deduplication and credit governance: cut third-party data spend ~70% across 10,000+ accounts, traced a 515K-credit monthly spike to its sources, shipped reusable guardrails. Email verification pipeline: web-search scraper &rarr; syntax guess &rarr; MX verify &mdash; 492 of 500 pass <em>before</em> anything sends.</p>
+      <p><b style="color:#fff">Approval gates on every external send.</b> Nothing goes out without a human gate. Compliance posture built in by default, not bolted on.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="sec-kicker">03 &middot; CASE STUDIES</div>
+    <h2>Receipts</h2>
+    <p class="sec-sub">Every engagement below shipped production systems with numbers attached.</p>
+    <div class="grid">
+      <div class="card case">
+        <div class="client">ATLAS HXM</div>
+        <h3>Inbound automation &rarr; $6.38M pipeline</h3>
+        <p>n8n + Azure OpenAI + HubSpot intake classifying, qualifying, and routing every inquiry in under 30 seconds, with full CRM attribution.</p>
+        <div class="metric">101 MQLs &middot; 29 deals &middot; $6.38M attributed</div>
+      </div>
+      <div class="card case">
+        <div class="client">ATLAS HXM</div>
+        <h3>Prospect engine replaces SDR research</h3>
+        <p>CRM-connected account research, enrichment, and human-approved sequencing for the entire sales rep and AE team.</p>
+        <div class="metric">8 hrs / 50 accounts &rarr; under 30 min</div>
+      </div>
+      <div class="card case">
+        <div class="client">ATLAS HXM</div>
+        <h3>Enrichment spend governance</h3>
+        <p>Clay waterfall with deduplication and credit guardrails across 10,000+ accounts; traced a 515K-credit monthly spike to its sources.</p>
+        <div class="metric">Data spend cut ~70%</div>
+      </div>
+      <div class="card case">
+        <div class="client">DARK ROAST MEDIA</div>
+        <h3>Outbound operations for 60,000 leads</h3>
+        <p>Built HubSpot and Reply.io outbound operations; campaigns sent 500 emails per day at a 12% reply rate.</p>
+        <div class="metric">Client grew $1M &rarr; $3M ARR</div>
+      </div>
+      <div class="card case">
+        <div class="client">RAND MCNALLY &middot; RAND FLEET</div>
+        <h3>Outbound playbook for six reps</h3>
+        <p>Full outbound playbook and automation layer for a six-rep team, tied directly to pipeline.</p>
+        <div class="metric">~$5M in pipeline</div>
+      </div>
+      <div class="card case">
+        <div class="client">SCALYTICS.IO</div>
+        <h3>Embedded GTM engineering</h3>
+        <p>Embedded with the founding team of a sovereign AI infrastructure startup; custom CRM and lead-gen workflows linking product-usage signals to marketing and outbound.</p>
+        <div class="metric">Usage-signal &rarr; pipeline engine</div>
+      </div>
+      <div class="card case">
+        <div class="client">UBER FOR BUSINESS</div>
+        <h3>Enterprise prospecting at volume</h3>
+        <p>2,000+ emails and 250 dials per week to senior buyers, as an individual contributor.</p>
+        <div class="metric">$947K+ gross bookings</div>
+      </div>
+      <div class="card case">
+        <div class="client">UPWORK &middot; DREAMITREEL</div>
+        <h3>Quota-carrying years</h3>
+        <p>Top 10% of a 60+ person team at Upwork; built a sales process tied to $2M+ revenue and 40% YoY growth at DreamItReel.</p>
+        <div class="metric">Top 10% &middot; $2M+ &middot; 40% YoY</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" style="background:rgba(255,255,255,.015)">
+  <div class="wrap">
+    <div class="sec-kicker">04 &middot; PORTFOLIO</div>
+    <h2>Things I built and shipped</h2>
+    <p class="sec-sub">A selection of production builds across GTM, AI platforms, and civic tech.</p>
+    <div class="grid">
+      <div class="card proj">
+        <h3><a href="https://artispreneur.com" target="_blank" rel="noopener">Artispreneur</a></h3>
+        <span class="tag">AI platform</span><span class="tag">Live</span>
+        <p>Music-business platform: 41,810-listing directory, AI chat, and a skill marketplace. Being reframed as a full agent operation with real revenue KPIs.</p>
+      </div>
+      <div class="card proj">
+        <h3><a href="https://www.salesgency.com" target="_blank" rel="noopener">SalesGency</a></h3>
+        <span class="tag">GTM agency</span><span class="tag">55 pages</span>
+        <p>AI-powered GTM agency site documenting the six core revenue workflows, buyable packages, and the automation template library.</p>
+      </div>
+      <div class="card proj">
+        <h3><a href="https://gencyai.com" target="_blank" rel="noopener">Gency AI</a></h3>
+        <span class="tag">AI agency</span><span class="tag">Live</span>
+        <p>Turns any department's SOP into an agent across 8 departments, delivered as packages, hireable agents, or 2-week sprints. Powered by 370+ production skills.</p>
+      </div>
+      <div class="card proj">
+        <h3><a href="https://trainlola.com" target="_blank" rel="noopener">TrainLola</a></h3>
+        <span class="tag">AI app</span><span class="tag">Supabase</span>
+        <p>AI training app: Supabase backend with 9 tables, signup verified end to end.</p>
+      </div>
+      <div class="card proj">
+        <h3><a href="https://civicpie.com" target="_blank" rel="noopener">CivicPie</a></h3>
+        <span class="tag">Civic tech</span><span class="tag">Live</span>
+        <p>Civic-tech platform covering all US territories. 100-ZIP regression at 93/93 with zero server errors.</p>
+      </div>
+      <div class="card proj">
+        <h3><a href="https://letsvibeai.com" target="_blank" rel="noopener">LetsVibeAI Academy</a></h3>
+        <span class="tag">Education</span><span class="tag">34 videos</span>
+        <p>Learning platform: practical guides for Claude Code, n8n, and AI tooling, original courses, interactive sandbox labs, and a daily newsletter in written, video, and audio formats.</p>
+      </div>
+      <div class="card proj">
+        <h3><a href="https://skillco.work" target="_blank" rel="noopener">Skill Library</a></h3>
+        <span class="tag">380+ skills</span><span class="tag">Live</span>
+        <p>380+ production skills with manifests and installable zips: n8n engineering, Clay enrichment waterfalls, CRM automation and attribution, outbound systems, compliance automation.</p>
+      </div>
+      <div class="card proj">
+        <h3><a href="https://artistdailynews.com" target="_blank" rel="noopener">Artist Daily News</a></h3>
+        <span class="tag">Media</span><span class="tag">Live</span>
+        <p>Daily music-industry news operation with automated sync pipelines.</p>
+      </div>
+      <div class="card proj">
+        <h3>Rostr</h3>
+        <span class="tag">Agent runtime</span><span class="tag">Live API</span>
+        <p>Agent runtime platform: 6 live projects on a healthy v1 API, evolving into a one-true-runtime on the Vercel AI stack.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resources">
+  <div class="wrap">
+    <div class="sec-kicker">05 &middot; RESOURCES</div>
+    <h2>Learn from the builds</h2>
+    <p class="sec-sub">The teaching library behind the work: videos, briefings, and the skill collection.</p>
+    <div class="res">
+      <div class="ric">&#9654;</div>
+      <div><h3><a href="https://letsvibeai.com" target="_blank" rel="noopener">LetsVibeAI Academy videos</a></h3>
+      <p>34 track videos plus original courses: practical, build-along guides for Claude Code, n8n, Make, and the AI tooling I use in production. The fastest way to see how I think.</p></div>
+    </div>
+    <div class="res">
+      <div class="ric">&#9993;</div>
+      <div><h3>LiveBuildAI daily briefings</h3>
+      <p>A daily AI briefing product: 100-source pipeline producing top headlines, a thematic digest, and a LinkedIn-ready edition every morning, plus a music-industry edition on the same engine. About 1,000 LinkedIn newsletter subscribers.</p></div>
+    </div>
+    <div class="res">
+      <div class="ric">&#9881;</div>
+      <div><h3><a href="https://skillco.work" target="_blank" rel="noopener">The skill library</a></h3>
+      <p>380+ production skills I wrote and use: n8n execution analysis, HubSpot import formatting, project output planning, Clay enrichment waterfalls, CRM automation and attribution. Installable, documented, and real.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="sec-kicker">06 &middot; CONTACT</div>
+    <h2>Let's build.</h2>
+    <p class="sec-sub">I take on GTM engineering engagements and full-time roles where automation is the growth plan.</p>
+    <div class="contact-grid">
+      <div>
+        <a class="big" href="mailto:Patrick.Diamitani@gmail.com">Patrick.Diamitani@gmail.com</a>
+        <a class="big" href="tel:+13199300290">(319) 930-0290</a>
+        <p style="color:var(--muted);margin-top:12px">Chicago, IL &middot; <a href="https://diamitani.com" target="_blank" rel="noopener">diamitani.com</a> &middot; <a href="https://www.linkedin.com/in/Diamitani" target="_blank" rel="noopener">linkedin.com/in/Diamitani</a> &middot; <a href="https://github.com/diamitani" target="_blank" rel="noopener">github.com/diamitani</a></p>
+      </div>
+      <div>
+        <a class="btn primary" href="Patrick-Diamitani-Founding-GTM-Engineer-Resume-2026-10-02.pdf" download>&#8681; Download my resume (PDF)</a>
+        <p style="color:var(--muted);font-size:14px;margin-top:16px">GTM engineer resume: Atlas HXM, founder builds, Uber for Business, Upwork. Skills, stack, and certifications inside.</p>
+      </div>
+    </div>
+    <div class="fine">
+      <span>Patrick Diamitani &middot; GTM Engineer &middot; Chicago, IL</span>
+      <span>Every metric from production systems</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Built by hand. Shipped like everything else here.</div>
+</footer>
+
+</body>
+</html>
