@@ -87,6 +87,9 @@
   .res h3{margin-bottom:8px;font-size:19px}
   .res h3 a{color:#fff} .res h3 a:hover{color:var(--sky)}
   .res p{color:var(--muted);font-size:15px}
+  .video-frame{max-width:960px;margin:0 auto}
+  .video-frame video{width:100%;height:auto;display:block;border-radius:18px;border:1px solid var(--line);background:#000}
+  .video-cap{margin-top:16px;font-size:14px;color:var(--muted);text-align:center}
   .contact{background:linear-gradient(135deg,var(--navy2),var(--navy));border-top:1px solid var(--line)}
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
   @media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
@@ -129,6 +132,21 @@
     </div>
   </div>
 </header>
+
+<section id="services-video" style="padding-top:56px">
+  <div class="wrap">
+    <div class="sec-kicker">FEATURED &middot; SALESGENCY</div>
+    <h2>Salesgency Services Overview</h2>
+    <p class="sec-sub">Every service, broken down: the engines, agents, and skills Salesgency installs inside your CRM.</p>
+    <div class="video-frame">
+      <video controls preload="metadata" poster="assets/salesgency-services-overview-poster.jpg">
+        <source src="assets/salesgency-services-overview.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="video-cap"><a href="https://www.salesgency.com" target="_blank" rel="noopener">Salesgency &middot; salesgency.com</a></p>
+    </div>
+  </div>
+</section>
 
 <section id="story">
   <div class="wrap">
